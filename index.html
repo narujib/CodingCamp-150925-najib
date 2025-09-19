@@ -19,6 +19,27 @@
   >
     <!-- ===== KONTEN UTAMA APLIKASI ===== -->
     <div class="container mx-auto px-4 py-8 max-w-3xl">
+      <div
+        id="greeting"
+        class="bg-custom-primary dark:bg-custom-primary-light text-white px-6 py-3 rounded-xl shadow-lg mb-8 flex items-center justify-center"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 mr-3"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+          />
+        </svg>
+        <span class="text-xl font-semibold"></span>
+      </div>
+
       <!-- Header aplikasi -->
       <header
         class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4"
@@ -599,6 +620,67 @@
               Hapus
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MODAL INPUT NAMA ===== -->
+    <div id="name-modal" class="name-modal">
+      <div
+        class="name-content bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border border-custom-neutral"
+      >
+        <div class="text-center">
+          <!-- Ikon salam -->
+          <div
+            class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-custom-primary"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
+          </div>
+
+          <!-- Judul -->
+          <h2
+            class="text-xl font-bold text-custom-primary dark:text-purple-400 mt-4"
+          >
+            Selamat Datang di Todo List
+          </h2>
+          <p class="text-sm text-custom-neutral dark:text-gray-300 mt-2">
+            Silakan masukkan nama Anda untuk melanjutkan.
+          </p>
+
+          <!-- Form input nama -->
+          <form id="name-form" class="mt-6">
+            <div class="mb-4">
+              <input
+                type="text"
+                id="user-name"
+                placeholder="Masukkan nama Anda"
+                class="w-full px-4 py-2 border border-custom-neutral dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-custom-primary focus:border-transparent dark:bg-gray-700"
+                required
+              />
+              <p class="text-red-500 text-xs mt-1 hidden" id="name-error">
+                Nama harus diisi
+              </p>
+            </div>
+            <button
+              type="submit"
+              class="w-full px-4 py-2 bg-custom-primary hover:bg-custom-primary-dark text-white rounded-lg transition-colors duration-300 font-medium"
+            >
+              Lanjutkan
+            </button>
+          </form>
         </div>
       </div>
     </div>

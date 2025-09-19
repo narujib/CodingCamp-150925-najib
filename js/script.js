@@ -23,6 +23,12 @@ const toast = document.getElementById("toast");
 const toastMessage = document.getElementById("toast-message");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const sortSelect = document.getElementById("sort-select");
+const nameModal = document.getElementById("name-modal");
+const nameForm = document.getElementById("name-form");
+const greeting = document.getElementById("greeting");
+
+// Attach name form listener early
+nameForm.addEventListener("submit", handleNameSubmit);
 
 // Inisialisasi aplikasi
 function initApp() {
@@ -46,7 +52,7 @@ function setupEventListeners() {
   cancelDelete.addEventListener("click", closeDeleteModal);
   confirmDelete.addEventListener("click", confirmDeleteHandler);
 
-  // Tombol filter - PERBAIKAN BUG DI SINI
+  // Tombol filter
   filterButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       // Hapus kelas active dari semua tombol filter
@@ -578,10 +584,52 @@ function checkSavedTheme() {
   }
 }
 
+// Cek nama pengguna
+function checkUserName() {
+  const name = localStorage.getItem("userName");
+  if (name) {
+    displayGreeting(name);
+    initApp();
+  } else {
+    showNameModal();
+  }
+}
+
+// Tampilkan modal nama
+function showNameModal() {
+  nameModal.classList.add("active");
+}
+
+// Handle submit nama
+function handleNameSubmit(e) {
+  e.preventDefault();
+  document.getElementById("name-error").classList.add("hidden");
+
+  const name = document.getElementById("user-name").value.trim();
+  if (!name) {
+    document.getElementById("name-error").classList.remove("hidden");
+    return;
+  }
+
+  localStorage.setItem("userName", name);
+  displayGreeting(name);
+  nameModal.classList.remove("active");
+  initApp();
+}
+
+// Tampilkan salam nama
+function displayGreeting(name) {
+  const greetingText = greeting.querySelector("span");
+  if (greetingText) {
+    greetingText.textContent = `Halo, ${name}! Selamat datang!`;
+  }
+  greeting.classList.remove("hidden");
+}
+
 // Inisialisasi aplikasi saat halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
   checkSavedTheme();
-  initApp();
+  checkUserName();
 });
 
 // Ekspos fungsi ke global scope untuk event handler inline
