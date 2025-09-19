@@ -1,4 +1,103 @@
-/* ===== STYLING UTAMA ===== */
+:root {
+  --primary: #6d28d9;
+  --primary-light: #8b5cf6;
+  --primary-dark: #5b21b6;
+  --secondary: #0d9488;
+  --accent: #ea580c;
+  --neutral: #4b5563;
+  --neutral-light: #f3f4f6;
+  --danger: #dc2626;
+  --danger-light: #ef4444;
+  --success: #16a34a;
+  --warning: #d97706;
+  --info: #0284c7;
+}
+
+.dark {
+  --neutral-light: #374151;
+  --primary: #8b5cf6;
+  --primary-light: #a78bfa;
+  --primary-dark: #7c3aed;
+}
+
+.bg-custom-primary {
+  background-color: var(--primary);
+}
+.bg-custom-primary-light {
+  background-color: var(--primary-light);
+}
+.bg-custom-primary-dark {
+  background-color: var(--primary-dark);
+}
+.hover\:bg-custom-primary-light:hover {
+  background-color: var(--primary-light);
+}
+.hover\:bg-custom-primary-dark:hover {
+  background-color: var(--primary-dark);
+}
+.text-custom-primary {
+  color: var(--primary);
+}
+.text-custom-primary-dark {
+  color: var(--primary-dark);
+}
+
+.bg-custom-secondary {
+  background-color: var(--secondary);
+}
+.text-custom-secondary {
+  color: var(--secondary);
+}
+
+.bg-custom-accent {
+  background-color: var(--accent);
+}
+.text-custom-accent {
+  color: var(--accent);
+}
+
+.bg-custom-neutral {
+  background-color: var(--neutral-light);
+}
+.text-custom-neutral {
+  color: var(--neutral);
+}
+
+.bg-custom-danger {
+  background-color: var(--danger);
+}
+.text-custom-danger {
+  color: var(--danger);
+}
+
+.bg-custom-success {
+  background-color: var(--success);
+}
+.text-custom-success {
+  color: var(--success);
+}
+
+.bg-custom-warning {
+  background-color: var(--warning);
+}
+.text-custom-warning {
+  color: var(--warning);
+}
+
+.bg-custom-info {
+  background-color: var(--info);
+}
+.text-custom-info {
+  color: var(--info);
+}
+
+.border-custom-primary {
+  border-color: var(--primary);
+}
+.border-custom-neutral {
+  border-color: var(--neutral-light);
+}
+
 /* Transisi halus untuk semua elemen */
 * {
   transition: background-color 0.3s ease, color 0.3s ease,
@@ -53,59 +152,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 .dark input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
-}
-
-/* ===== VARIABEL WARNA ===== */
-:root {
-  --primary: #7c3aed;
-  --primary-light: #8b5cf6;
-  --secondary: #10b981;
-  --accent: #f59e0b;
-  --neutral: #6b7280;
-  --neutral-light: #f3f4f6;
-}
-.dark {
-  --neutral-light: #374151;
-}
-
-.bg-custom-primary {
-  background-color: var(--primary);
-}
-.bg-custom-primary-light {
-  background-color: var(--primary-light);
-}
-.bg-custom-secondary {
-  background-color: var(--secondary);
-}
-.bg-custom-accent {
-  background-color: var(--accent);
-}
-.bg-custom-neutral {
-  background-color: var(--neutral-light);
-}
-
-.text-custom-primary {
-  color: var(--primary);
-}
-.text-custom-secondary {
-  color: var(--secondary);
-}
-.text-custom-accent {
-  color: var(--accent);
-}
-.text-custom-neutral {
-  color: var(--neutral);
-}
-
-.border-custom-primary {
-  border-color: var(--primary);
-}
-.border-custom-neutral {
-  border-color: var(--neutral-light);
-}
-
-.hover\:bg-custom-primary-light:hover {
-  background-color: var(--primary-light);
 }
 
 /* ===== STYLING MODAL ===== */
@@ -167,4 +213,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   max-width: 400px;
   border-radius: 12px;
   animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Ikon kustom untuk kategori */
+.category-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+/* Style untuk tombol filter aktif */
+.filter-btn.active {
+  background-color: var(--primary);
+  color: white;
+}
+.dark .filter-btn.active {
+  background-color: var(--primary-dark);
 }
