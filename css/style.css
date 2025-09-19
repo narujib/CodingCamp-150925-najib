@@ -1,0 +1,76 @@
+/* ===== STYLING UTAMA ===== */
+/* Transisi halus untuk semua elemen */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Animasi untuk toggle button */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#theme-toggle:active {
+  animation: pulse 0.3s ease;
+}
+
+/* ===== VARIABEL WARNA ===== */
+:root {
+  --primary: #7c3aed;
+  --primary-light: #8b5cf6;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --neutral: #6b7280;
+  --neutral-light: #f3f4f6;
+}
+.dark {
+  --neutral-light: #374151;
+}
+
+.bg-custom-primary {
+  background-color: var(--primary);
+}
+.bg-custom-primary-light {
+  background-color: var(--primary-light);
+}
+.bg-custom-secondary {
+  background-color: var(--secondary);
+}
+.bg-custom-accent {
+  background-color: var(--accent);
+}
+.bg-custom-neutral {
+  background-color: var(--neutral-light);
+}
+
+.text-custom-primary {
+  color: var(--primary);
+}
+.text-custom-secondary {
+  color: var(--secondary);
+}
+.text-custom-accent {
+  color: var(--accent);
+}
+.text-custom-neutral {
+  color: var(--neutral);
+}
+
+.border-custom-primary {
+  border-color: var(--primary);
+}
+.border-custom-neutral {
+  border-color: var(--neutral-light);
+}
+
+.hover\:bg-custom-primary-light:hover {
+  background-color: var(--primary-light);
+}
